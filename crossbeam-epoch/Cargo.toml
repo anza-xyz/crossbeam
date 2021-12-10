@@ -54,9 +54,9 @@ memoffset = "0.6"
 loom-crate = { package = "loom", version = "0.5", optional = true }
 
 [dependencies.crossbeam-utils]
-version = "0.8.5"
-path = "../crossbeam-utils"
-default-features = false
+# this is patched as well. currently, our `solana` monorepo is locking this
+# crate to this version
+version = "0.8.8"
 
 [dependencies.lazy_static]
 version = "1.4.0"
