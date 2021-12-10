@@ -43,7 +43,10 @@ nightly = ["crossbeam-utils/nightly"]
 loom = ["loom-crate", "crossbeam-utils/loom"]
 
 [dependencies]
-crossbeam-utils = { version = "0.8.18", path = "../crossbeam-utils", default-features = false }
+# this is patched: drop the in-repo path so Agave's `[patch.crates-io]` git patch
+# of crossbeam-epoch resolves crossbeam-utils from crates.io (matching the version
+# pinned in the Agave workspace) instead of the sibling crate in this fork.
+crossbeam-utils = { version = "0.8.18" }
 
 # Enable the use of loom for concurrency testing.
 #
